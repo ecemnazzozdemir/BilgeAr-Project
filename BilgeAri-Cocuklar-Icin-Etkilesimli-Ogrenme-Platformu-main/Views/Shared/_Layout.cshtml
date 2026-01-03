@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BilgeAriMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/anasayfa.css"/>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BilgeAriMVC.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+
+
+            <a class="navbar-brand" href="#">
+
+                <img src="~/images/navbariconlast.png" alt="Bilge Arı" width="40" height="40" class="d-inline-block align-text-top me-2">
+
+                <span class="fw-bold">Bilge Arı</span>
+
+            </a>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bilgeAriNavbar" aria-controls="bilgeAriNavbar" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+
+            <div class="collapse navbar-collapse" id="bilgeAriNavbar">
+
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#zaman">⏳ Zaman Yolculuğu</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="dogadedektifleri.html">🌳 Doğa Dedektifliği</a></li>
+
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="kodlamauzmani">💻 Kodlama Uzmanı</a></li>
+
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="felsefibilgin"**>🤔 Felsefi Bilgin</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="bilim.html">🧪 Bilim Bahçesi</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="ingilizce.html">🗣 İngilizce Dehası</a></li>
+
+                </ul>
+
+
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="hesabimDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            Hesabım
+
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="hesabimDropdown">
+
+                            <li><a class="dropdown-item" href="#profil">Profilim</a></li>
+
+                            <li><a class="dropdown-item" href="#İlerlemelerim">İlerlemelerim</a></li>
+
+                            <li><a class="dropdown-item" href="#ayarlar">Ayarlar</a></li>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li><a class="dropdown-item" href="#cikis">Çıkış Yap</a></li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+
+         </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" style="min-height:80vh;">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+
+        <div class="footer-content-wrapper">
+
+
+
+            <div class="footer-column links-column">
+
+                <h3>Hızlı Erişim</h3>
+
+                <ul>
+
+                    <li><a href="#icerik">Bilgi Kartları</a></li>
+
+                    <li><a href="#hakkimizda">Hakkımızda</a></li>
+
+                    <li><a href="#sss">Sıkça Sorulan Sorular</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-column contact-column">
+
+                <h3>İletişim</h3>
+
+                <p>E-posta: <a href="mailto:info@bilgeari.com">info@bilgeari.com</a></p>
+
+                <p>Telefon: +90 555 123 45 67</p>
+
+            </div>
+
+
+
+            <div class="footer-column social-column">
+
+                <h3>Bizi Takip Edin</h3>
+
+                <div class="social-icons">
+
+                    <a href="https://www.facebook.com" aria-label="Facebook"><span class="icon">F</span></a>
+
+                    <a href="https://www.x.com/" aria-label="Twitter/X"><span class="icon">X</span></a>
+
+                    <a href="https://www.instagram.com/" aria-label="Instagram"><span class="icon">I</span></a>
+
+                    <a href="https://www.youtube.com" aria-label="Youtube"><span class="icon">Y</span></a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="footer-copyright">
+
+            <p>&copy; 2025 Kâşif Vız Okulu. Tüm Hakları Saklıdır.</p>
+
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

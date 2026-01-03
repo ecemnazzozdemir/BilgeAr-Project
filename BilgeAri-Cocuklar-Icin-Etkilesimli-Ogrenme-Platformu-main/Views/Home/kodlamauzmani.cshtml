@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Kodlama Uzmanı";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/kodlamauzmani.css" />
+}
+
+<section id="yazilim-sayfasi">
+    <div class="software-container-v3">
+
+        <div class="mascot-container">
+            <svg class="bee-queen-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <ellipse cx="50" cy="55" rx="35" ry="25" fill="#ffd700" />
+                <rect x="25" y="45" width="50" height="8" fill="black" />
+                <rect x="20" y="58" width="60" height="8" fill="black" />
+                <circle cx="50" cy="30" r="20" fill="#ffd700" />
+                <circle cx="40" cy="25" r="5" fill="black" />
+                <circle cx="60" cy="25" r="5" fill="black" />
+                <path d="M40 10 L30 0" stroke="black" stroke-width="3" fill="none" />
+                <circle cx="30" cy="0" r="3" fill="black" />
+                <path d="M60 10 L70 0" stroke="black" stroke-width="3" fill="none" />
+                <circle cx="70" cy="0" r="3" fill="black" />
+                <path d="M65 30 Q 75 10 90 20 Q 80 40 65 30 Z" fill="rgba(255,255,255,0.7)" stroke="#ccc" stroke-width="1" />
+                <path d="M35 30 Q 25 10 10 20 Q 20 40 35 30 Z" fill="rgba(255,255,255,0.7)" stroke="#ccc" stroke-width="1" />
+            </svg>
+            <div class="speech-bubble" id="kodo-bubble">
+                Vızzz! Ben Arı Kraliçe! 🐝 Yazılımın tatlı dünyasını keşfetmeye hazır mısın?
+                Öğrenmek için fareni kartların üzerine getir!
+            </div>
+        </div>
+
+        <div class="activity-card" data-kodo-text="Vızzz! Kod, bu canavarı nasıl değiştireceğimizi söyleyen talimatlardır. Deneyelim mi?">
+            <h2>👾 Kod ile Canavar Yarat!</h2>
+            <p>Butonlara tıkla ve kodun bu canavarı nasıl değiştirdiğini izle!</p>
+            <div class="monster-display">
+                <svg id="monster" viewBox="0 0 100 100" width="150" height="150">
+                    <path id="monster-hat" d="M 40 25 Q 50 5 60 25 L 55 28 Q 50 15 45 28 Z" fill="#ffc107" />
+                    <circle id="monster-body" cx="50" cy="60" r="40" fill="#8bc34a" />
+                    <circle id="monster-eye1" cx="35" cy="50" r="8" fill="white" />
+                    <circle cx="35" cy="50" r="4" fill="black" />
+                    <circle id="monster-eye2" cx="65" cy="50" r="8" fill="white" />
+                    <circle cx="65" cy="50" r="4" fill="black" />
+                    <path id="monster-mouth" d="M 30 75 Q 50 60 70 75" stroke="black" stroke-width="3" fill="none" />
+                </svg>
+            </div>
+            <div class="controls">
+                <button id="btn-color" class="control-btn">Rengini Kırmızı Yap</button>
+                <button id="btn-eyes" class="control-btn">Gözleri Büyüt</button>
+                <button id="btn-mouth" class="control-btn">Mutlu Yap</button>
+                <button id="btn-hat" class="control-btn">👑 Anten Ekle</button>
+                <button id="btn-reset" class="control-btn reset-btn">Sıfırla</button>
+            </div>
+        </div>
+
+        <div class="activity-card" data-kodo-text="Vızzz! Bir algoritmadaki 'böceği' bulabilir misin?">
+            <h2>🐞 Hata (Bug) Avı: Okula Hazırlanma!</h2>
+            <p>Sence mantıksal 'hata' olan adıma tıkla!</p>
+            <div class="bug-hunt-steps">
+                <div class="bug-step" id="step1">
+                    <span class="step-icon">👟</span> <span class="step-text">1. Ayakkabılarını giy.</span>
+                </div>
+                <div class="bug-step" id="step2">
+                    <span class="step-icon">🧦</span> <span class="step-text">2. Çoraplarını giy.</span>
+                </div>
+                <div class="bug-step" id="step3">
+                    <span class="step-icon">🎒</span> <span class="step-text">3. Çantanı al.</span>
+                </div>
+            </div>
+            <div id="bug-feedback" class="feedback-text"></div>
+            <button id="btn-fix-bug" class="control-btn">Adımları Düzelt!</button>
+        </div>
+
+        <div class="activity-card" id="language-gallery-card" data-kodo-text="Vızz! Birçok yazılım 'dili' var.">
+            <h2>🐝 Yazılım Dilleri Galerisi ☕</h2>
+            <div class="languages-grid">
+                <div class="lang-logo python" id="logo-python" data-info="Vızz! Bu Python! 🐍 Öğrenmesi çok kolaydır!">
+                    <span class="logo-title">Python</span>
+                </div>
+                <div class="lang-logo js" id="logo-js" data-info="Vızz! Bu JavaScript! 📜 Web sitelerini canlandırır!">
+                    <span class="logo-title">JS</span>
+                </div>
+                <div class="lang-logo csharp" id="logo-csharp" data-info="Vızz! Bu C#! 🎮 Oyun yapmak için harikadır!">
+                    <span class="logo-title">C#</span>
+                </div>
+                <div class="lang-logo java" id="logo-java" data-info="Vızz! Bu Java! ☕ Minecraft bununla yapıldı!">
+                    <span class="logo-title">Java</span>
+                </div>
+                <div class="lang-logo cpp" id="logo-cpp" data-info="Vızz! Bu C++! 🚀 Çok hızlı ve güçlüdür!">
+                    <span class="logo-title">C++</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity-card" data-kodo-text="Vızzz! Yazılım her yerde!">
+            <h2>🏠 Yazılım Nerede Saklanıyor?</h2>
+            <p>Günlük eşyaların üzerine gel ve keşfet!</p>
+            <div class="room-container">
+                <div class="clickable-item" style="top: 50%; left: 20%;" data-info="Oyun oynamanı sağlayan şey yazılımdır!">💻</div>
+                <div class="clickable-item" style="top: 10%; left: 50%;" data-info="Rengini değiştirebilen bu lamba yazılımla çalışır!">💡</div>
+                <div class="clickable-item" style="top: 60%; left: 70%;" data-info="Video izlediğin tabletin içinde kod var!">📱</div>
+                <div class="clickable-item" style="top: 75%; left: 45%;" data-info="Bu robot yazılımla hareket eder!">🤖</div>
+            </div>
+        </div>
+
+    </div> <div class="theme-toggle">
+        <span id="dark-mode-btn">🌙</span>
+        <span id="light-mode-btn">🌞</span>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/kodlamauzmani.js"></script>
+}

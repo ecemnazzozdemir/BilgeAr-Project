@@ -1,0 +1,554 @@
+﻿body {
+    /* Yuvarlak, çocuk dostu font kullan */
+    font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Ana sarı renk (bal rengi) */
+    background-color: #ffe082;
+    /* Arı peteği efekti: Radyal desenlerle petek görünümü oluştur */
+    background-image: radial-gradient(circle at 100% 150%, #ffe082 24%, #ffd54f 25%, #ffd54f 27%, #ffe082 28%, #ffe082 34%, #ffd54f 35%, #ffd54f 37%, #ffe082 38%, #ffe082 44%, #ffd54f 45%, #ffd54f 47%, #ffe082 48%, #ffe082 54%, #ffd54f 55%, #ffd54f 57%, #ffe082 58%, #ffe082 64%, #ffd54f 65%, #ffd54f 67%, #ffe082 68%, #ffe082 74%, #ffd54f 75%, #ffd54f 77%, #ffe082 78%, #ffe082 84%, #ffd54f 85%, #ffd54f 87%, #ffe082 88%, #ffe082 94%, #ffd54f 95%, #ffd54f 97%, #ffe082 98%), radial-gradient(circle at 0% 150%, #ffe082 24%, #ffd54f 25%, #ffd54f 27%, #ffe082 28%, #ffe082 34%, #ffd54f 35%, #ffd54f 37%, #ffe082 38%, #ffe082 44%, #ffd54f 45%, #ffd54f 47%, #ffe082 48%, #ffe082 54%, #ffd54f 55%, #ffd54f 57%, #ffe082 58%, #ffe082 64%, #ffd54f 65%, #ffd54f 67%, #ffe082 68%, #ffe082 74%, #ffd54f 75%, #ffd54f 77%, #ffe082 78%, #ffe082 84%, #ffd54f 85%, #ffd54f 87%, #ffe082 88%, #ffe082 94%, #ffd54f 95%, #ffd54f 97%, #ffe082 98%) top left/100% 50% repeat-x;
+    /* Petek desenini hareket ettiren animasyon */
+    animation: moveHoneyComb 20s linear infinite;
+    /* Tema değişiminde yumuşak geçiş */
+    transition: background-color 0.3s ease;
+}
+
+    /* Tema butonlarını gizleme: Aktif tema butonunu gizle */
+    body[data-theme="light"] #light-mode-btn {
+        display: none;
+    }
+
+    body[data-theme="dark"] #dark-mode-btn {
+        display: none;
+    }
+
+/* Arı peteği animasyonu: Deseni yavaşça hareket ettir */
+@keyframes moveHoneyComb {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Ana içerik konteyneri: Sayfayı ortala ve maksimum genişlik ver */
+.software-container-v3 {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ===== MASKOT KUTUSU (ARI KRALİÇE) ===== */
+
+.mascot-container {
+    /* Flex ile arı ve konuşma balonunu yan yana diz */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Yarı saydam beyaz arka plan */
+    background: rgba(255, 255, 255, 0.8);
+    /* Kesik çizgili sarı kenarlık */
+    border: 2px dashed #ffc107;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    /* Arka planı bulanıklaştır (cam efekti) */
+    backdrop-filter: blur(3px);
+}
+
+/* Arı SVG'si: Boyut ve konum ayarları */
+.bee-queen-svg {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0; /* Küçülmesini engelle */
+    margin-right: 20px;
+    /* Arının uçuş animasyonu */
+    animation: beeFly 3s ease-in-out infinite alternate;
+}
+
+/* Arı uçuş animasyonu: Yukarı-aşağı hareket ve hafif dönme */
+@keyframes beeFly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Konuşma Balonu: Arının sözleri için */
+.speech-bubble {
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+
+    /* Konuşma balonunun ok kısmı (arıya doğru işaret eden) */
+    .speech-bubble::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 10px;
+        border-style: solid;
+        /* Sadece sağ kenarı görünür yaparak ok oluştur */
+        border-color: transparent white transparent transparent;
+    }
+
+/* ===== ETKİNLİK KARTLARI ===== */
+
+.activity-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    /* Hafif gölge efekti */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    overflow: hidden;
+    /* Hover animasyonu için geçiş */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Kart üzerine gelindiğinde: Hafif büyüt ve gölgeyi artır */
+    .activity-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Kart başlıkları: Turuncu renk */
+    .activity-card h2 {
+        color: #ff8c00;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Kart açıklamaları */
+    .activity-card p {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto 20px auto;
+    }
+
+/* ===== CANAVAR YARATICI STİLLERİ ===== */
+
+.monster-display {
+    margin: 20px 0;
+}
+
+/* Canavar SVG elemanları: Değişimler için yumuşak geçiş */
+#monster-body, #monster-eye1, #monster-eye2, #monster-mouth, #monster-hat {
+    transition: all 0.3s ease;
+}
+
+/* Şapka başlangıçta görünmez */
+#monster-hat {
+    opacity: 0;
+    transform: translateY(-10px);
+    fill: #ffc107;
+}
+
+    /* Şapka görünür olduğunda */
+    #monster-hat.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* Kontrol butonları: Flex ile yan yana dizilim */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Küçük ekranlarda alta geç */
+}
+
+/* Kontrol butonlarının genel stili */
+.control-btn {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+    /* Buton hover efekti: Renk koyulaşır ve hafif büyür */
+    .control-btn:hover {
+        background-color: #ffa000;
+        transform: scale(1.05);
+    }
+
+    /* Sıfırlama butonu: Gri renk */
+    .control-btn.reset-btn {
+        background-color: #6c757d;
+        color: white;
+    }
+
+        .control-btn.reset-btn:hover {
+            background-color: #5a6268;
+        }
+
+/* ===== HATA AVI (BUG HUNT) STİLLERİ ===== */
+
+.bug-hunt-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+/* Her bir adım kartı */
+.bug-step {
+    background: #fff8e1; /* Açık sarı */
+    border: 3px solid #ffecb3;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer; /* Tıklanabilir */
+    transition: all 0.2s ease;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+    /* Adım hover efekti */
+    .bug-step:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Adım ikonu (emoji) */
+    .bug-step .step-icon {
+        font-size: 2rem;
+        margin-right: 15px;
+    }
+
+    /* Doğru adım seçildiğinde: Yeşil */
+    .bug-step.correct-step {
+        border-color: #4caf50;
+        background: #e8f5e9;
+        animation: pulseFeedback 0.5s ease;
+    }
+
+    /* Yanlış adım seçildiğinde: Kırmızı */
+    .bug-step.wrong-step {
+        border-color: #f44336;
+        background: #ffebee;
+        animation: shakeFeedback 0.5s ease;
+    }
+
+/* Düzelt butonu: Başlangıçta gizli */
+#btn-fix-bug {
+    background-color: #4caf50;
+    color: white;
+    margin-top: 15px;
+    display: none; /* JavaScript ile gösterilir */
+    padding: 14px 25px;
+    font-size: 1.1rem;
+}
+
+    #btn-fix-bug:hover {
+        background-color: #388e3c;
+    }
+
+/* Geri bildirim metni */
+.feedback-text {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+    .feedback-text.correct {
+        color: #4caf50;
+    }
+    /* Yeşil */
+    .feedback-text.wrong {
+        color: #f44336;
+    }
+/* Kırmızı */
+
+/* ===== YAZILIM DİLLERİ GALERİSİ ===== */
+
+.languages-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Alt satıra geç */
+    margin-top: 30px;
+}
+
+/* Her bir dil logosu kartı */
+.lang-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 5px solid transparent; /* Başlangıçta görünmez kenarlık */
+}
+
+    /* Logo hover efekti */
+    .lang-logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+/* Logo başlığı (dil adı) */
+.logo-title {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Logo açıklaması */
+.logo-desc {
+    font-size: 0.85rem;
+    font-weight: normal;
+    opacity: 0.9;
+    line-height: 1.3;
+}
+
+/* Her bir dilin rengi */
+.lang-logo.python {
+    background-color: #306998;
+}
+/* Python: Mavi */
+.lang-logo.js {
+    background-color: #f7df1e;
+}
+/* JavaScript: Sarı */
+.lang-logo.csharp {
+    background-color: #68217a;
+}
+/* C#: Mor */
+.lang-logo.java {
+    background-color: #f89820;
+}
+/* Java: Turuncu */
+.lang-logo.cpp {
+    background-color: #00599C;
+}
+/* C++: Koyu Mavi */
+
+/* JavaScript logosu için özel renk (sarı arka planda koyu metin) */
+.lang-logo.js .logo-title {
+    color: #333;
+}
+
+.lang-logo.js .logo-desc {
+    color: #555;
+    opacity: 1;
+}
+
+/* Seçili dil: Turuncu kenarlık */
+.lang-logo.active {
+    border-color: #ff8c00;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Seçili olmayan diller: Soluk */
+.lang-logo.inactive {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+/* ===== İNTERAKTİF ODA STİLLERİ ===== */
+
+.room-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #fffde7; /* Açık sarı */
+    border: 2px solid #ffecb3;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* Tıklanabilir nesneler (emoji'ler) */
+.clickable-item {
+    position: absolute;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+    /* Nesne hover efekti: Büyür */
+    .clickable-item:hover {
+        transform: scale(1.3);
+    }
+
+    /* Tooltip (bilgi balonu): Nesne üzerine gelindiğinde göster */
+    .clickable-item::after {
+        content: attr(data-info); /* data-info içeriğini göster */
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        width: 150px;
+        text-align: center;
+        opacity: 0; /* Başlangıçta görünmez */
+        visibility: hidden;
+        transition: opacity 0.2s;
+        pointer-events: none; /* Tıklanamaz */
+    }
+
+    /* Hover'da tooltip görünür yap */
+    .clickable-item:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+/* ===== ANIMASYONLAR ===== */
+
+/* Nabız animasyonu: Hafif büyüyüp küçül */
+@keyframes pulseFeedback {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Sallanma animasyonu: Sağa-sola hızlıca salla */
+@keyframes shakeFeedback {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(10px);
+    }
+
+    60% {
+        transform: translateX(-10px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+/* Canavar animasyonu sınıfı */
+.monster-animate {
+    animation: pulseFeedback 0.3s ease;
+}
+
+/* ===== TEMA DEĞİŞTİRME BUTONLARI ===== */
+
+.theme-toggle {
+    position: fixed; /* Sayfada sabit konumda */
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000; /* En üstte görünsün */
+    cursor: pointer;
+}
+
+    .theme-toggle span {
+        font-size: 3rem;
+        display: block;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Gölge efekti */
+    }
+
+        /* Tema butonu hover efekti */
+        .theme-toggle span:hover {
+            transform: scale(1.2);
+        }
+
+/* ===== KARANLIK TEMA STİLLERİ ===== */
+
+body[data-theme="dark"] {
+    background-color: #1a1a2e; /* Koyu lacivert */
+    /* Karanlık tema için petek deseni */
+    background-image: radial-gradient(circle at 100% 150%, #1a1a2e 24%, #16213e 25%, #16213e 27%, #1a1a2e 28%, #1a1a2e 34%, #16213e 35%, #16213e 37%, #1a1a2e 38%, #1a1a2e 44%, #16213e 45%, #16213e 47%, #1a1a2e 48%, #1a1a2e 54%, #16213e 55%, #16213e 57%, #1a1a2e 58%, #1a1a2e 64%, #16213e 65%, #16213e 67%, #1a1a2e 68%, #1a1a2e 74%, #16213e 75%, #16213e 77%, #1a1a2e 78%, #1a1a2e 84%, #16213e 85%, #16213e 87%, #1a1a2e 88%, #1a1a2e 94%, #16213e 95%, #16213e 97%, #1a1a2e 98%), radial-gradient(circle at 0% 150%, #1a1a2e 24%, #16213e 25%, #16213e 27%, #1a1a2e 28%, #1a1a2e 34%, #16213e 35%, #16213e 37%, #1a1a2e 38%, #1a1a2e 44%, #16213e 45%, #16213e 47%, #1a1a2e 48%, #1a1a2e 54%, #16213e 55%, #16213e 57%, #1a1a2e 58%, #1a1a2e 64%, #16213e 65%, #16213e 67%, #1a1a2e 68%, #1a1a2e 74%, #16213e 75%, #16213e 77%, #1a1a2e 78%, #1a1a2e 84%, #16213e 85%, #16213e 87%, #1a1a2e 88%, #1a1a2e 94%, #16213e 95%, #16213e 97%, #1a1a2e 98%) top left/100% 50% repeat-x;
+}
+
+    /* Karanlık temada kartlar */
+    body[data-theme="dark"] .activity-card {
+        background: #2d3748; /* Koyu gri */
+        color: #e2e8f0; /* Açık gri metin */
+    }
+
+        body[data-theme="dark"] .activity-card h2 {
+            color: #ffa500; /* Turuncu başlık */
+        }
+
+        body[data-theme="dark"] .activity-card p {
+            color: #cbd5e0; /* Açık gri metin */
+        }
+
+    /* Karanlık temada maskot kutusu */
+    body[data-theme="dark"] .mascot-container {
+        background: rgba(45, 55, 72, 0.9);
+        border-color: #ffa500;
+    }
+
+    /* Karanlık temada konuşma balonu */
+    body[data-theme="dark"] .speech-bubble {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+
+        body[data-theme="dark"] .speech-bubble::before {
+            border-color: transparent #1a202c transparent transparent;
+        }
+
+    /* Karanlık temada hata avı adımları */
+    body[data-theme="dark"] .bug-step {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    /* Karanlık temada oda konteyneri */
+    body[data-theme="dark"] .room-container {
+        background: #2d3748;
+        border-color: #4a5568;
+    }

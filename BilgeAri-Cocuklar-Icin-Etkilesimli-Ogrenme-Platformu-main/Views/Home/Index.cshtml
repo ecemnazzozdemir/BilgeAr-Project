@@ -1,0 +1,174 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<section class="hero">
+
+    <h2>Keşfet, Öğren, Eğlen!</h2>
+
+    <p>Bilgi Kartları ve Macera Odaları ile Vız Vız Öğrenme Başlasın!</p>
+
+    <button class="start-btn" onclick="scrollToContent()">Hemen Başla!</button>
+
+</section>
+
+
+<div class="maskot-container" id="vizzVizMaskot">
+
+    <img src="~/images/girismaskot.png"
+         alt="Bilge Arı Maskotu"
+         id="maskotGorseli"
+         onmouseover="tavsiyeKutusuGoster()"
+         onmouseout="tavsiyeKutusuGizle()"
+         onclick="tavsiyeMenusuAc()">
+
+
+
+    <div id="tavsiyeBaloncuk" class="tavsiye-baloncuk">
+
+        VızVız'ın Tavsiyeleri 💡
+
+    </div>
+
+
+
+    <div id="tavsiyeMenu" class="tavsiye-menu">
+
+        <div class="menu-baslik">Ne Yapmak İstersin?</div>
+
+        <ul id="tavsiyeListesi">
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+
+
+<main>
+
+    <div id="gel"></div>
+
+    <section id="icerik" class="content-section">
+
+        <h2>Popüler Bilgi Kartları</h2>
+
+
+
+        <div class="content-previews" id="randomCardsContainer">
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- İLERLEMELERİM BÖLÜMÜ -->
+
+    <section class="badges-section" id="İlerlemelerim">
+
+        <div class="container">
+
+            <h2 class="section-title">İLERLEMELERİM 🏆</h2>
+
+            <p class="section-subtitle">Kategorilerdeki ilerlemelerini takip et ve devam et!</p>
+
+            <div class="badges-grid">
+
+                <div class="badge-card unlocked">
+
+                    <div class="badge-icon">🔬</div>
+
+                    <a class="badge-name" href="bilim.html">Bilim Dünyası</a>
+
+                    <div class="badge-progress">
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill" style="width: 75%"></div>
+
+                        </div>
+
+                        <span>75%</span>
+
+                    </div>
+
+                </div>
+
+                <div class="badge-card unlocked">
+
+                    <div class="badge-icon">💻</div>
+
+                    <a class="badge-name" href="kodlamauzmani.html">Kod Atölyesi</a>
+
+                    <div class="badge-progress">
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill" style="width: 60%"></div>
+
+                        </div>
+
+                        <span>60%</span>
+
+                    </div>
+
+                </div>
+
+                <div class="badge-card unlocked">
+
+                    <div class="badge-icon">🔍</div>
+
+                    <a class="badge-name" href="dogadedektifleri.html">Doğa Dedektifleri</a>
+
+                    <div class="badge-progress">
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill" style="width: 40%"></div>
+
+                        </div>
+
+                        <span>40%</span>
+
+                    </div>
+
+                </div>
+
+                <div class="badge-card unlocked">
+
+                    <div class="badge-icon">🌍</div>
+
+                    <a class="badge-name" href="#kategori-ingilizce">İngilizce Bahçesi</a>
+
+                    <div class="badge-progress">
+
+                        <div class="progress-bar">
+
+                            <div class="progress-fill" style="width: 90%"></div>
+
+                        </div>
+
+                        <span>90%</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+@section Scripts {
+    <script src="~/js/anasayfa.js"></script>
+}

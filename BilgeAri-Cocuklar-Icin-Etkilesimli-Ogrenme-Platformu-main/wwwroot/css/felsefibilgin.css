@@ -1,0 +1,164 @@
+/* ----------------------------------------------------------------
+   FELSEFİ BİLGİN - HARİCİ STİL DOSYASI (felsefe.css)
+   Derinlik ve bilgelik hissi veren, sakin tonlarla güncellenmiştir.
+---------------------------------------------------------------- */
+
+/* Renk Paleti (Bilge ve Sakin Tonlar) */
+:root {
+    --primary-deep: #4A6F7D; /* Derin Düşünce Mavisi/Teal */
+    --secondary-gold: #C99E5C; /* Bilgelik Altını (Vurgu) */
+    --accent-sage: #9EB89E; /* Sakin Adaçayı Yeşili (Denge) */
+    --background-parchment: #FEFBEA; /* Parşömen Beyazı */
+    --text-color: #333;
+}
+
+/* Genel Stil ve Font */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-parchment);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.custom-navbar {
+    background-color: var(--secondary-gold) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gölgeyi koruduk */
+    position: relative !important; /* Artık seninle aşağı gelmez, tepede kalır */
+    z-index: 9999; /* Diğer her şeyin üstünde durur */
+}
+.custom-navbar .navbar-brand {
+    color: white !important;
+    text-shadow: 1px 1px 0 #333;
+}
+.custom-navbar a {
+    color: var(--primary-deep) !important;
+    font-weight: bold;
+}
+
+
+/* Başlık Bölümü */
+.felsefe-header {
+    /* Teal tonlar arasında yumuşak bir geçiş */
+    background: linear-gradient(145deg, var(--primary-deep), #6699A3); 
+    color: white; 
+    padding: 4rem 1rem;
+    text-align: center;
+    position:relative;
+    /* Köşeleri yuvarlama */
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.felsefe-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--secondary-gold);
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Filozof Kartları */
+.filozof-card {
+    border: 2px solid var(--accent-sage) !important;
+    border-radius: 1.5rem !important;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.filozof-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.2) !important;
+}
+.filozof-image-container {
+    height: 200px;
+    background-color: var(--secondary-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.3rem 1.3rem 0 0;
+}
+.filozof-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.filozof-content h3 {
+    font-weight: bold;
+    color: var(--primary-deep);
+    font-size: 1.5rem;
+}
+
+/* Ana Bölüm Başlıkları */
+section h2 {
+    color: var(--primary-deep) !important;
+    border-color: var(--secondary-gold) !important;
+}
+
+/* Accordion (Büyük Sorular) Başlık Rengi */
+.accordion-button:not(.collapsed) {
+    color: white !important;
+    background-color: var(--primary-deep) !important;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+    border-radius: 1rem 1rem 0 0 !important;
+}
+.accordion-item {
+    border-color: var(--accent-sage) !important;
+}
+
+/* Düşünce Baloncuğu */
+.dusunce-baloncuk {
+    background-color: var(--accent-sage);
+    color: var(--primary-deep);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 5px solid var(--secondary-gold);
+    margin-top: 2rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dusunce-baloncuk span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+/* Footer */
+footer {
+    background-color: #333 !important;
+    position: relative !important;
+    bottom: 0;
+}
+footer a {
+    color: #ccc !important;
+}
+footer h3 {
+    color: var(--secondary-gold) !important;
+}
+
+/* OYUN STİLİ */
+.game-button {
+    background-color: var(--secondary-gold);
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Tam genişlik kaplaması için */
+    width: 100%;
+    text-align: left;
+}
+.game-button:hover {
+    background-color: var(--primary-deep);
+    transform: scale(1.02);
+}
+.game-result-box {
+    border-radius: 1rem;
+    border-left: 5px solid var(--accent-sage);
+    font-style: italic;
+    color: var(--primary-deep);
+    background-color: #ffffff;
+}

@@ -1,0 +1,205 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="~/css/felsefibilgin.css" />
+}
+
+@{
+    ViewData["Title"] = "Felsefi Bilgin";
+}
+<header class="felsefe-header">
+    <div class="container">
+        <h1>🤔 Felsefi Bilgin: Neden Diye Sor!</h1>
+        <p class="lead mt-2 text-white">
+            6-12 yaş için büyük düşünce oyunları! Dünyayı daha derin anlamak için Vız Vız düşünme zamanı.
+        </p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4 pb-2 border-bottom border-4 fw-bold fs-3">
+            Felsefe Nedir? (Arı Gibi Açıklama)
+        </h2>
+        <div class="bg-white p-4 rounded-3 shadow-sm border-start border-5 border-warning" style="border-color: var(--secondary-gold) !important;">
+            <p class="fs-5">
+                Felsefe, "Büyük Sorular" sormaktır! Arılar sürekli en iyi balı nasıl yapacağını, çiçekler nerede diye düşünür, değil mi? Felsefe de insanların hayat, dünya, iyilik ve kötülük gibi konularda meraklanmasıdır. Felsefeci, asla cevabı kabul etmeyip "Neden?" diye sormaya devam eden kişidir. Tıpkı bir dedektif gibi, gerçeği bulmaya çalışır. 🔍
+            </p>
+        </div>
+    </section>
+
+
+    <section class="mb-5 p-4 rounded-3 shadow-lg" style="background-color: #FFFEEE; border: 3px solid var(--primary-deep);">
+        <h2 class="text-center mb-4 pb-2 border-bottom border-4 fw-bold fs-3">
+            🕹️ Hangi Yol? (Filozofun İkilemi)
+        </h2>
+        <p class="text-center lead text-muted">Aşağıdaki ikilemlerde hangi kararı verirdin? Tıkla ve düşüncenin arkasındaki felsefeyi gör!</p>
+
+        <div id="game-container">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title" style="color: var(--primary-deep);">Durum:</h4>
+                    <p id="dilemma-question" class="fs-5 fw-bold"></p>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4" id="choice-buttons">
+                <div class="col-md-6">
+                    <button id="choiceA" class="game-button" onclick="makeChoice('A')">A Seçeneği</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="choiceB" class="game-button" onclick="makeChoice('B')">B Seçeneği</button>
+                </div>
+            </div>
+
+            <div id="dilemma-result-area" class="alert d-none p-4 game-result-box">
+                <h5 class="fw-bold" style="color: var(--secondary-gold);">🤔 Düşünce Tohumu:</h5>
+                <p id="dilemma-result"></p>
+                <button class="btn btn-sm text-white mt-3" style="background-color: var(--primary-deep);" onclick="loadNextDilemma()">Sıradaki İkilem</button>
+            </div>
+
+            <div id="game-end-screen" class="text-center d-none p-5 rounded-3" style="background-color: var(--accent-sage);">
+                <h3 class="text-white fw-bold">Oyun Bitti! 🎉</h3>
+                <p class="lead text-white mt-3">Tüm ikilemleri başarıyla düşündün. Sen harika bir kâşif ve filozofsun!</p>
+                <button class="btn btn-lg text-white mt-3" style="background-color: var(--secondary-gold);" onclick="startGame()">Baştan Başla</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-5 pb-2 border-bottom border-4 fw-bold fs-3">
+            Filozof Arkadaşlarla Tanış 🥳
+        </h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 filozof-card shadow">
+                    <div class="filozof-image-container">
+                        <img src="~/images/socrates.jpeg" alt="Sokrates'in çizimi" class="filozof-image img-fluid">
+                    </div>
+                    <div class="card-body filozof-content">
+                        <h3 class="card-title">Sokrates-Soru Soran Arı❓</h3>
+                        <p class="card-subtitle mb-2 text-muted fst-italic">"Tek bildiğim, hiçbir şey bilmediğimdir."</p>
+                        <p class="card-text small">
+                            Sokrates, soru sorma şampiyonudur. "İyilik nedir?", "Cesaret ne demek?" diye sorar dururdu. Cevap vermez, sadece sorularıyla seni kendi cevabını bulmaya yönlendirirdi. O, senin de bir "Soru Arısı" olmanı ister!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 filozof-card shadow">
+                    <div class="filozof-image-container">
+                        <img src="~/images/platon.jpeg" alt="Platon'un çizimi" class="filozof-image img-fluid p-3">
+                    </div>
+                    <div class="card-body filozof-content">
+                        <h3 class="card-title">Platon-Mağara Kâşifi💡</h3>
+                        <p class="card-subtitle mb-2 text-muted fst-italic">"Gördüğün her şeyin mükemmel bir örneği vardır."</p>
+                        <p class="card-text small">
+                            Platon, her şeyin mükemmel bir "İdeası" (Fikri) olduğunu düşünürdü. Mesela bir koltuk görüyorsun. Ama o koltuk fikri, senin gördüğünden daha mükemmeldir! O, dünyayı değil, o mükemmel fikirlerin dünyasını keşfetmeyi severdi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 filozof-card shadow">
+                    <div class="filozof-image-container">
+                        <img src="~/images/diyojen.jpeg" alt="Diyojen'in çizimi" class="filozof-image img-fluid p-3">
+                    </div>
+                    <div class="card-body filozof-content">
+                        <h3 class="card-title">Diyojen-Fıçıdaki Dost 🐕</h3>
+                        <p class="card-subtitle mb-2 text-muted fst-italic">"Az şeye sahip olmak, çok şeye sahip olmaktan daha iyidir."</p>
+                        <p class="card-text small">
+                            Diyojen, zenginliğe, gösterişe hiç önem vermezdi. Bir fıçıda yaşar, sadece güneş ışığı isterdi! Mutluluğun pahalı eşyalarda değil, "doğal ve basit bir yaşamda" olduğunu söylerdi. O, hayatı sadeleştirmeyi seven bir bilgeydi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4 pb-2 border-bottom border-4 fw-bold fs-3">
+            Süper Düşünce Soruları 🧠
+        </h2>
+
+        <div class="accordion" id="soruAccordion">
+
+            <div class="accordion-item shadow-sm mb-3 rounded-3 border-2">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button fs-5 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1. Hayvanlar rüya görüyor mu, eğer görüyorlarsa ne görüyorlar?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#soruAccordion">
+                    <div class="accordion-body bg-light">
+                        <p>
+                            Kısa Cevap: Evet, bilim insanları köpekler, kediler ve diğer memelilerin de rüya gördüğüne inanıyor! 🐾 <br>
+                            Felsefi Düşünce: Biz rüyamızda koştuğumuzu, oynadığımızı görüyorsak, bir köpeğin rüyasında da parkta koştuğunu veya en sevdiği kemiği yediğini düşünebiliriz. Peki, bir arı rüyasında en tatlı balı mı görür? 🍯 Rüya, sadece insana ait olmayabilir!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3 rounded-3 border-2">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fs-5 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Bir şeyi "iyi" yapan şey nedir? Herkes için "iyi" aynı mı?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#soruAccordion">
+                    <div class="accordion-body bg-light">
+                        <p>
+                            Kısa Cevap: Genellikle "iyi", başkalarına yardım eden, zarar vermeyen eylemlerdir. ❤️ <br>
+                            Felsefi Düşünce: Birine tatlı bir bal vermek "iyi" bir şeydir. Ama bal alerjisi olan biri için bu "iyi" olmaz, değil mi? Felsefe, iyi eylemin sonuçlarını, niyetini ve herkes üzerindeki etkisini düşünmemizi ister. Bazen bir şey senin için iyiyken, başkası için kötü olabilir. O zaman ne yaparız?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3 rounded-3 border-2">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed fs-5 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. Eğer kimse seni görmüyorsa, kötü bir şey yapmak yine de kötü müdür?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#soruAccordion">
+                    <div class="accordion-body bg-light">
+                        <p>
+                            Kısa Cevap: Evet, çünkü önemli olan yaptığın şeyin sonuçlarıdır. 🤫 <br>
+                            Felsefi Düşünce: Bir felsefeci, kötülüğün başkalarının sana kızmasıyla değil, eylemin kendisiyle ilgili olduğunu söyler. Kimse görmese bile, o eylem birine zarar vermiş veya sana kötü bir alışkanlık kazandırmış olabilir. Senin vicdanın, kimsenin görmediği en önemli şahittir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3 rounded-3 border-2">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed fs-5 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. Bir robot seni tam olarak taklit edebilirse, o robotun da duyguları var mıdır?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#soruAccordion">
+                    <div class="accordion-body bg-light">
+                        <p>
+                            Kısa Cevap:Bilmiyoruz! Ama tam taklit edebiliyorsa, bunu nasıl anlarız? 🤖 <br>
+                            Felsefi Düşünce:Bu, felsefedeki en zor sorulardan. Eğer bir robot, üzgünmüş gibi ağlayabilir, mutluyumuş gibi gülebilirse; dışarıdan baktığımızda onu bizden ayıran ne kalır? Robotun sadece taklit mi ettiğini, yoksa gerçekten mi hissettiğini anlamanın bir yolu var mı?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="dusunce-baloncuk mb-5">
+        <span>🌟</span>
+        Unutma: Felsefe, her zaman doğru cevabı bulmak değildir. "Doğru soruyu sormaktır!"" Hadi, etrafındaki her şeye "Neden?" diye sormaya başla.
+    </div>
+
+
+</main>
+@section Scripts {
+    <script src="~/js/felsefibilgin.js"></script>
+}
