@@ -540,6 +540,8 @@ body[data-theme="dark"] {
             border-color: transparent #1a202c transparent transparent;
         }
 
+
+
     /* Karanlık temada hata avı adımları */
     body[data-theme="dark"] .bug-step {
         background: #2d3748;
